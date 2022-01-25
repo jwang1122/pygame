@@ -17,6 +17,12 @@ preferred installer program
 
 ✔️ Pygame is a multimedia library for Python for making games and multimedia applications.
 
+
+❓ what is blit()?
+✔️ blit() — blit stands for Block Transfer—and it's going to copy the contents of one Surface onto another Surface . 00:17 The two surfaces in question are the screen that you created and the new Surface . So, . blit() will take that rectangular Surface and put it on top of the screen.
+
+❓ what is flip()?
+✔️ flip() updates the entire Surface on the display. pygame. display. update() updates the entire Surface, only if no argument is passed.
 - [create main surface.](#create-main-surface)
 - [create main loop](#create-main-loop)
 - [add time tick](#add-time-tick)
@@ -27,6 +33,7 @@ preferred installer program
 - [Draw Shapes](#draw-shapes)
 - [Use class](#use-class)
 - [Making sounds](#making-sounds)
+- [Fight Chimp](#fight-chimp)
 
 ```mermaid
 graph TB
@@ -113,3 +120,15 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
   
 ## Making sounds
 [wav, mp3](../src/sound1.py)
+
+## Fight Chimp
+* [Display Chimp image](../src/displayChimp.py)
+* [move chimp on screen](../src/moveChimp.py)
+* [mouse Fist](../src/mouseFist.py)
+
+❓ what is move_ip() for?
+
+✔️ The move_ip() stands for move in-place, which means we move the rectangle relative to its previous position.
+
+
+
