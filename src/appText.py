@@ -45,4 +45,4 @@ class Text:
         App.screen.blit(self.img, self.rect)
 
 if __name__ == '__main__':
-    App()
+    App().mainloop()

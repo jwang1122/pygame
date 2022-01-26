@@ -2,12 +2,12 @@ import pygame as pg
 import os
 
 main_dir = os.path.split(os.path.abspath(__file__))[0]
-data_dir = os.path.join(main_dir, "data")
+data_dir = os.path.join(main_dir, "resources")
 width = 1280
 height=480
 screen = pg.display.set_mode((width, height), pg.SCALED)
 pg.init()
-snd = pg.mixer.Sound('src/data/yunque.mp3')
+snd = pg.mixer.Sound('src/resources/yunque.mp3')
 snd.play()     
 
 # functions to create our resources
@@ -44,8 +44,8 @@ def mainloop():
     clock = pg.time.Clock()
     running = True
     chimp = Chimp()
-    xspeed = 15
-    yspeed = 15
+    xspeed = 5
+    yspeed = 5
 
     while(running):
         clock.tick(30)
@@ -55,14 +55,10 @@ def mainloop():
         screen.fill((0,255,255))
         x = chimp.rect.center[0]+xspeed
         y = chimp.rect.center[1]+yspeed
-        if x > width:
-            xspeed = -5
-        if y > height:
-            yspeed = -5
-        if x <0:
-            xspeed = 5
-        if y<0:
-            yspeed= 5
+        if x > width or x < 0:
+            xspeed = -xspeed
+        if y > height or y<0:
+            yspeed = -yspeed
         chimp.rect.center = (x,y)
         screen.blit(chimp.image, chimp.rect)
         pg.display.flip()

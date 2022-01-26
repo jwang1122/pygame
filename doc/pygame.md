@@ -17,12 +17,17 @@ preferred installer program
 
 ✔️ Pygame is a multimedia library for Python for making games and multimedia applications.
 
-
 ❓ what is blit()?
-✔️ blit() — blit stands for Block Transfer—and it's going to copy the contents of one Surface onto another Surface . 00:17 The two surfaces in question are the screen that you created and the new Surface . So, . blit() will take that rectangular Surface and put it on top of the screen.
+✔️ blit() — blit stands for Block Image Transfer — and it's going to copy the contents of one Surface onto another Surface . The two surfaces in question are the screen that you created and the new Surface. blit() will take that rectangular Surface and put it on top of the screen.
 
 ❓ what is flip()?
+
 ✔️ flip() updates the entire Surface on the display. pygame. display. update() updates the entire Surface, only if no argument is passed.
+
+❓ what is move_ip() for?
+
+✔️ The move_ip() stands for move in-place, which means we move the rectangle relative to its previous position.
+
 - [create main surface.](#create-main-surface)
 - [create main loop](#create-main-loop)
 - [add time tick](#add-time-tick)
@@ -30,6 +35,7 @@ preferred installer program
 - [images](#images)
 - [color](#color)
 - [Bounced Ball](#bounced-ball)
+- [Draw Text](#draw-text)
 - [Draw Shapes](#draw-shapes)
 - [Use class](#use-class)
 - [Making sounds](#making-sounds)
@@ -101,15 +107,25 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 ```
 
 ## images
-[Move Image](../src/moveImage.py)
-[Move image with muse](../src/image1.py)
-[rotage, change size of image](../src/image2.py)
+* [Load Image, resize, rotate](../src/loadImage.py)
+```py
+YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yellow.png'))
+```
+* [load and display image](../src/loadImage2.py)
+* [loadImage(), scale and move image](../src/loadImage3.py)
+* [Move Image](../src/moveImage.py)
+* [Move image with muse](../src/image1.py)
+* [rotate, change size of image](../src/image2.py)
 
 ## color
 [Background color](../src/color.py)
 
 ## Bounced Ball
 [Bounced Ball](../src/ball.py)
+
+## Draw Text
+* [Draw Text](../src/drawText.py)
+* [PyGame Coordinates](../src/coordinates.py)
 
 ## Draw Shapes
 * [common function for rectangle](../src/rect.py)
@@ -144,9 +160,6 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 * [mouse click punch sound](../src/fistPunch.py)
 * [](../src/fistHitChimp.py)
 
-❓ what is move_ip() for?
-
-✔️ The move_ip() stands for move in-place, which means we move the rectangle relative to its previous position.
 
 
 
