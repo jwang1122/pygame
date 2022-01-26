@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((w, h))
 running = True
 module = sys.modules['__main__']
 path, name = os.path.split(module.__file__)
-path = os.path.join(path, 'data/chimp.png')
+path = os.path.join(path, 'resources/chimp.png')
 img0 = pygame.image.load(path)
 img0.convert()
 # draw a green border around img0

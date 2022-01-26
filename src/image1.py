@@ -8,7 +8,7 @@ w, h = 1024, 768
 screen = pygame.display.set_mode((w, h))
 running = True
 
-img = pygame.image.load('src/data/chimp.png')
+img = pygame.image.load('src/resources/chimp.png')
 img.convert()
 rect = img.get_rect()
 rect.center = w//2, h//2

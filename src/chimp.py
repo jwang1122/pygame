@@ -17,7 +17,7 @@ if not pg.mixer:
     print("Warning, sound disabled")
 
 main_dir = os.path.split(os.path.abspath(__file__))[0]
-data_dir = os.path.join(main_dir, "data")
+data_dir = os.path.join(main_dir, "resources")
 
 
 # functions to create our resources
@@ -93,7 +93,7 @@ class Chimp(pg.sprite.Sprite):
         self.rect.topleft = 10, 90
         self.move = 18
         self.dizzy = False
-        self.snd = pg.mixer.Sound('src/data/yunque.mp3')
+        self.snd = pg.mixer.Sound('src/resources/yunque.mp3')
         self.snd.play()     
 
     def update(self):

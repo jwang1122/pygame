@@ -2,7 +2,7 @@ from rect import *
   
 rect1 = pygame.Rect(60,30,30,30)
 rect2 = pygame.Rect(20,20,20,20)
-collisionSound = pygame.mixer.Sound('src/data/punch.wav')    
+collisionSound = pygame.mixer.Sound('src/resources/punch.wav')    
 
 while running:
     for event in pygame.event.get():

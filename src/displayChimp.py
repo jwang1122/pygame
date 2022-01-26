@@ -3,12 +3,12 @@ import pygame as pg
 
 class Chimp:
     def __init__(self):
-        self.image= pg.image.load("src/data/chimp.png")
+        self.image= pg.image.load("src/resources/chimp.png")
         self.image = pg.transform.scale(self.image, (250, 300))
         self.rect = self.image.get_rect()
 class Fist:
     def __init__(self):
-        self.image= pg.image.load("src/data/fist.png")
+        self.image= pg.image.load("src/resources/fist.png")
         self.image = pg.transform.scale(self.image, (150,150))
         self.rect = self.image.get_rect()
 

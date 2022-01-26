@@ -1,8 +1,8 @@
 from rect import *
   
 rect1 = pygame.Rect(20,20,20,20)
-collisionSound = pygame.mixer.Sound('src/data/punch.wav')    
-img = pygame.image.load('src/data/Gold-Medal.gif')
+collisionSound = pygame.mixer.Sound('src/resources/punch.wav')    
+img = pygame.image.load('src/resources/Gold-Medal.gif')
 img = pygame.transform.scale(img, (300,300))
 gap = 40
 rect = img.get_rect()

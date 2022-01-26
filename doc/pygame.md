@@ -31,7 +31,6 @@ preferred installer program
 - [create main surface.](#create-main-surface)
 - [create main loop](#create-main-loop)
 - [add time tick](#add-time-tick)
-- [load image](#load-image)
 - [images](#images)
 - [color](#color)
 - [Bounced Ball](#bounced-ball)
@@ -39,6 +38,8 @@ preferred installer program
 - [Draw Shapes](#draw-shapes)
 - [Use class](#use-class)
 - [Making sounds](#making-sounds)
+- [Collision](#collision)
+- [Fire Bullets](#fire-bullets)
 - [Fight Chimp](#fight-chimp)
 
 ```mermaid
@@ -71,14 +72,13 @@ class F end1
 WIDTH, HEIGHT = 900, 500
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 ```
-[open a window](../src/openWindow.py)
+Click to see source code: [open a window](../src/openWindow.py)
 
 ## create main loop
 it will keep window open
 
 ```py
-def main():
-
+def mainloop():
     run = True
     while run:
         for event in pygame.event.get():
@@ -97,14 +97,8 @@ if __name__ == '__main__':
 clock = pygame.time.Clock()
 clock.tick(1) #FPS: 1 frame per second
 ```
-[](../src/timeTick.py)
+Click to see source code: [Time tick](../src/timeTick.py)
 
-## load image
-
-[Load Image, resize, rotate](../src/loadImage.py)
-```py
-YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yellow.png'))
-```
 
 ## images
 * [Load Image, resize, rotate](../src/loadImage.py)
@@ -118,19 +112,22 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 * [rotate, change size of image](../src/image2.py)
 
 ## color
-[Background color](../src/color.py)
+Click to see source code: [Background color](../src/color.py)
 
 ## Bounced Ball
-[Bounced Ball](../src/ball.py)
+* [Bounced Ball](../src/ball.py)
 
 ## Draw Text
 * [Draw Text](../src/drawText.py)
 * [PyGame Coordinates](../src/coordinates.py)
 
 ## Draw Shapes
+* [draw line](../src/drawLine.py)
+* [draw arc](../src/drawArc.py)
+* [draw circle](../src/drawCircle.py)
 * [common function for rectangle](../src/rect.py)
-* [Draw Rectangle](../src/rectangle.py)
-* [Draw Eclipses, catch mouse actions](../src/ellipses.py)
+* [Draw Rectangle](../src/drawRectangle.py)
+* [Draw Eclipses, catch mouse actions](../src/drawEllipses.py)
 * [draw rectagle on screen](../src/rect1.py)
 * [Special points of rectangle](../src/rect2.py)
 * [change rectangle location by key](../src/rect3.py)
@@ -138,12 +135,7 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 * [inflate_ip() change rect size](../src/rect5.py)
 * [clip(), union()](../src/rect6.py)
 * [event.pos, event.rel](../src/rect7.py)
-* [bounced rectangle](../src/rect8.py)
-* [collidepoint()](../src/rect9.py)
-* [colliderect()](../src/rect10.py)
-* [hit box](../src/rect11.py)
-* [hit head](../src/rect12.py)
-* [spaceship fire](../src/rect13.py)
+* [event bounced rectangle](../src/rect8.py)
 
 ## Use class
 * [Super class](../src/appSuper.py)
@@ -153,6 +145,15 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 ## Making sounds
 [wav, mp3](../src/sound1.py)
 
+## Collision
+* [collidepoint()](../src/rect9.py)
+* [colliderect()](../src/rect10.py)
+* [Understand Collision](../src/rect11.py)
+* [hit head](../src/rect12.py)
+
+## Fire Bullets
+* [spaceship fire](../src/rect13.py)
+* 
 ## Fight Chimp
 * [Display Chimp image](../src/displayChimp.py)
 * [move chimp on screen](../src/moveChimp.py)

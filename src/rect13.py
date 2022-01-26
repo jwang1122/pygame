@@ -1,7 +1,7 @@
 from rect import *
   
-fireSound = pygame.mixer.Sound('src/data/whiff.wav')    
-shipImg = pygame.image.load('src/data/spaceship.png')
+fireSound = pygame.mixer.Sound('src/resources/whiff.wav')    
+shipImg = pygame.image.load('src/resources/spaceship.png')
 shipImg = pygame.transform.scale(shipImg, (300,300))
 gap = 40
 rect = shipImg.get_rect()

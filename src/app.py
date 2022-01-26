@@ -110,12 +110,12 @@ class App:
         pygame.display.update()
 
 if __name__ == '__main__':
-    app = App('src/data/space.jfif', 'Asteroids')
-    ship = Sprite('src/data/spaceship.png', size=(100, 50), pos=(300, 200))
+    app = App('src/resources/space.jfif', 'Asteroids')
+    ship = Sprite('src/resources/spaceship.png', size=(100, 50), pos=(300, 200))
     app.add(ship)
-    app.add(Sprite('src/data/asteroid.png', size=(100, 100), pos=(100, 300)))
-    app.add(Sprite('src/data/asteroid.png', size=(150, 150), pos=(400, 100)))
+    app.add(Sprite('src/resources/asteroid.png', size=(100, 100), pos=(100, 300)))
+    app.add(Sprite('src/resources/asteroid.png', size=(150, 150), pos=(400, 100)))
     app.add_cmd(K_a, 'print(123)')
-    app.add_cmd(K_b, "self.load_image('src/data/space.png')")
+    app.add_cmd(K_b, "self.load_image('src/resources/space.png')")
     app.run()
             

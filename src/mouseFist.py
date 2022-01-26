@@ -2,12 +2,12 @@ import pygame as pg
 import os
 
 main_dir = os.path.split(os.path.abspath(__file__))[0]
-data_dir = os.path.join(main_dir, "data")
+data_dir = os.path.join(main_dir, "resources")
 width = 1280
 height=480
 screen = pg.display.set_mode((width, height), pg.SCALED)
 pg.init()
-snd = pg.mixer.Sound('src/data/yunque.mp3')
+snd = pg.mixer.Sound('src/resources/yunque.mp3')
 snd.play()     
 # pg.mouse.set_visible(False)
 

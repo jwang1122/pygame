@@ -1,8 +1,8 @@
 from rect import *
   
 rect1 = pygame.Rect(20,20,20,20)
-collisionSound = pygame.mixer.Sound('src/data/punch.wav')    
-chimpImg = pygame.image.load('src/data/chimp.png')
+collisionSound = pygame.mixer.Sound('src/resources/punch.wav')    
+chimpImg = pygame.image.load('src/resources/chimp.png')
 chimpImg = pygame.transform.scale(chimpImg, (300,400))
 gap = 40
 rect = chimpImg.get_rect()
