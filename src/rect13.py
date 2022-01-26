@@ -20,7 +20,7 @@ while running:
                 fire = True
     if rect1.left<width and fire:
         print(rect1.left)
-        rect1 = rect1.move((30,0))
+        rect1.move_ip(20,0)
     else:
         fire = False
     screen.fill(GRAY)

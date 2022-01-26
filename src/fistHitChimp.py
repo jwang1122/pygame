@@ -7,9 +7,9 @@ width = 1280
 height=480
 screen = pg.display.set_mode((width, height), pg.SCALED)
 pg.init()
-snd = pg.mixer.Sound('src/data/yunque.mp3')
+snd = pg.mixer.Sound(os.path.join(data_dir, 'yunque.mp3'))
 snd.play() 
-punchSound = pg.mixer.Sound('src/data/punch.wav')    
+punchSound = pg.mixer.Sound(os.path.join(data_dir, 'punch.wav'))    
 # pg.mouse.set_visible(False)
 
 # functions to create our resources
@@ -34,8 +34,9 @@ class Chimp(pg.sprite.Sprite):
 
     def __init__(self):
         pg.sprite.Sprite.__init__(self)  # call Sprite intializer
-        self.image, self.rect = load_image("chimp.png", -1, 0.8)
+        self.image, self.rect = load_image("chimp.png", -1, 0.5)
         # self.image = pg.transform.scale(self.image, (250,250))
+        print(self.rect)
         screen = pg.display.get_surface()
         self.area = screen.get_rect()
         self.rect.topleft = 10, 90
@@ -48,9 +49,10 @@ class Fist(pg.sprite.Sprite):
 
     def __init__(self):
         pg.sprite.Sprite.__init__(self)  # call Sprite initializer
-        self.image, self.rect = load_image("fist.png", -1, 1)
-        self.image = pg.transform.scale(self.image, (150,150))
-        self.fist_offset = (0, 0)
+        self.image, self.rect = load_image("fist.png", -1, 0.025)
+        print(self.rect)
+        # self.image = pg.transform.scale(self.image, (150,150))
+        self.fist_offset = (-2000, -100)
         self.punching = False
 
     def update(self):

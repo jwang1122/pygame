@@ -27,7 +27,7 @@ preferred installer program
 - [create main loop](#create-main-loop)
 - [add time tick](#add-time-tick)
 - [load image](#load-image)
-- [move the images](#move-the-images)
+- [images](#images)
 - [color](#color)
 - [Bounced Ball](#bounced-ball)
 - [Draw Shapes](#draw-shapes)
@@ -100,8 +100,10 @@ clock.tick(1) #FPS: 1 frame per second
 YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yellow.png'))
 ```
 
-## move the images
+## images
 [Move Image](../src/moveImage.py)
+[Move image with muse](../src/image1.py)
+[rotage, change size of image](../src/image2.py)
 
 ## color
 [Background color](../src/color.py)
@@ -139,6 +141,8 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 * [Display Chimp image](../src/displayChimp.py)
 * [move chimp on screen](../src/moveChimp.py)
 * [mouse Fist](../src/mouseFist.py)
+* [mouse click punch sound](../src/fistPunch.py)
+* [](../src/fistHitChimp.py)
 
 ❓ what is move_ip() for?
 

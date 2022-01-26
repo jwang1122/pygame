@@ -49,6 +49,7 @@ def mainloop():
     clock = pg.time.Clock()
     running = True
     fist = Fist()
+    punching = False
 
     while(running):
         clock.tick(30)
@@ -57,9 +58,14 @@ def mainloop():
                 running=False
             elif event.type == pg.MOUSEBUTTONDOWN:
                 punchSound.play()
+                punching = True
+            elif event.type == pg.MOUSEBUTTONUP:
+                punching = False
 
         screen.fill((0,255,255))
         fist.update()
+        if punching:
+            fist.rect.move_ip(10,-17)
         screen.blit(fist.image, fist.rect)
         pg.display.flip()
     pg.quit()

@@ -57,8 +57,7 @@ class Fist(pg.sprite.Sprite):
 
     def __init__(self):
         pg.sprite.Sprite.__init__(self)  # call Sprite initializer
-        self.image, self.rect = load_image("fist.png", -1, 1)
-        self.image = pg.transform.scale(self.image, (150,150))
+        self.image, self.rect = load_image("fist.png", -1, 0.03)
         self.fist_offset = (-235, -80)
         self.punching = False
 
@@ -88,8 +87,7 @@ class Chimp(pg.sprite.Sprite):
 
     def __init__(self):
         pg.sprite.Sprite.__init__(self)  # call Sprite intializer
-        self.image, self.rect = load_image("chimp.png", -1, 1)
-        self.image = pg.transform.scale(self.image, (250,250))
+        self.image, self.rect = load_image("chimp.png", -1, 0.6)
         screen = pg.display.get_surface()
         self.area = screen.get_rect()
         self.rect.topleft = 10, 90
