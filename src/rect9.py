@@ -1,6 +1,6 @@
 from rect import *
   
-rect = pygame.Rect(10,10,300,140)
+rect = pygame.Rect(30,30,300,140)
 points = random_points(100)
 
 while running:

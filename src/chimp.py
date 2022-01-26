@@ -107,7 +107,7 @@ class Chimp(pg.sprite.Sprite):
 
     def _walk(self):
         """move the monkey across the screen, and turn at the ends"""
-        newpos = self.rect.move((self.move, 0))
+        newpos = self.rect.move(self.move, 0)
         if not self.area.contains(newpos):
             if self.rect.left < self.area.left or self.rect.right > self.area.right:
                 self.move = -self.move

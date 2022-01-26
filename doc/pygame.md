@@ -110,8 +110,22 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 [Bounced Ball](../src/ball.py)
 
 ## Draw Shapes
+* [common function for rectangle](../src/rect.py)
 * [Draw Rectangle](../src/rectangle.py)
 * [Draw Eclipses, catch mouse actions](../src/ellipses.py)
+* [draw rectagle on screen](../src/rect1.py)
+* [Special points of rectangle](../src/rect2.py)
+* [change rectangle location by key](../src/rect3.py)
+* [move_ip() move rectangle by arrow keys](../src/rect4.py)
+* [inflate_ip() change rect size](../src/rect5.py)
+* [clip(), union()](../src/rect6.py)
+* [event.pos, event.rel](../src/rect7.py)
+* [bounced rectangle](../src/rect8.py)
+* [collidepoint()](../src/rect9.py)
+* [colliderect()](../src/rect10.py)
+* [hit box](../src/rect11.py)
+* [hit head](../src/rect12.py)
+* [spaceship fire](../src/rect13.py)
 
 ## Use class
 * [Super class](../src/appSuper.py)

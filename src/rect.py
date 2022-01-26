@@ -2,8 +2,8 @@ import pygame
 from pygame.locals import *
 from random import randint
 
-width = 500
-height = 200
+width = 640
+height = 480
 SIZE = (width, height)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
@@ -18,7 +18,7 @@ WHITE = (255, 255, 255)
 dir = {K_LEFT: (-5, 0), K_RIGHT: (5, 0), K_UP: (0, -5), K_DOWN: (0, 5)}
 
 rect = Rect(50, 60, 200, 80)
-screen = pygame.display.set_mode(SIZE)
+screen = pygame.display.set_mode(SIZE, pygame.RESIZABLE)
 
 def draw_text(text, pos):
     font = pygame.font.SysFont('Arial Bold', 25)    

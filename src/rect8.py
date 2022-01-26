@@ -17,5 +17,5 @@ while running:
             v[1] *= -1
     screen.fill(GRAY)
     pygame.draw.rect(screen, RED, rect)
-    pygame.display.flip()
+    pygame.display.update()
 pygame.quit()
