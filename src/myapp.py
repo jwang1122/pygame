@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from pygamelib import *
+import os
 
 BLACK=(0,0,0)
 GRAY = (127, 127, 127)
@@ -11,6 +12,13 @@ BLUE = (0,0,255)
 YELLOW = (255,255,0)
 CYAN = (0, 255, 255)
 MAGENTA = (255,0,255)
+
+def loadImage(filename, scale=1):
+    filename = os.path.join('src/resources',filename)
+    image = pygame.image.load(filename)
+    image = pygame.transform.scale(image, (image.get_width()*scale, image.get_height()*scale))
+    rect = image.get_rect()
+    return image, rect
 
 class App:
     running = True
@@ -54,15 +62,15 @@ class App:
         for event in pygame.event.get():
             if event.type == QUIT:
                 self.running = False
-            self.do(event)
+            self.handle(event)
             
-    def do(self, event):
+    def handle(self, event):
         pass
 
     def mainloop(self):
         """Run the main event loop."""
         while self.running:
-            self.clock.tick(1)
+            self.clock.tick(self.fps)
             self.eventHandler()
             self.paint()
         pygame.quit()

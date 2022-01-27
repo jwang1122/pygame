@@ -17,6 +17,9 @@ preferred installer program
 
 ✔️ Pygame is a multimedia library for Python for making games and multimedia applications.
 
+❓ What is Surface?
+✔️ pygame object for representing images.  
+
 ❓ what is blit()?
 ✔️ blit() — blit stands for Block Image Transfer — and it's going to copy the contents of one Surface onto another Surface . The two surfaces in question are the screen that you created and the new Surface. blit() will take that rectangular Surface and put it on top of the screen.
 
@@ -40,6 +43,7 @@ preferred installer program
 - [Making sounds](#making-sounds)
 - [Collision](#collision)
 - [Fire Bullets](#fire-bullets)
+- [Button](#button)
 - [Fight Chimp](#fight-chimp)
 - [Sample games](#sample-games)
 
@@ -128,6 +132,19 @@ Click to see source code: [Background color](../src/color.py)
 * [draw arc](../src/drawArc.py)
 * [draw circle](../src/drawCircle.py)
 * [common function for rectangle](../src/rect.py)
+  
+🔑⚡️ **Knowlodge Base:**
+1. get moving speed based on arrow key from dict [](../src/rect4.py)
+2. 2 way to create rect: Rect(x,y,w,h) or Rect(pos, size)
+3. to draw text(a. create font; b. create Surface; c. blit on screen)
+```py
+def draw_text(text, pos):
+    font = pygame.font.SysFont('Arial Bold', 25)    
+    img = font.render(text, True, BLACK)
+    screen.blit(img, pos)
+```
+💡👉 screen.blit(img, rect) works the same way.
+
 * [Draw Rectangle](../src/drawRectangle.py)
 * [Draw Eclipses, catch mouse actions](../src/drawEllipses.py)
 * [draw rectagle on screen](../src/rect1.py)
@@ -141,7 +158,7 @@ Click to see source code: [Background color](../src/color.py)
 
 ## Use class
 * [Super class](../src/appSuper.py)
-* [Subclass](../src/app.py)
+* [Subclass](../src/appSub.py)
 * [Text class](../src/appText.py)
 * [My App Super class](../src/myapp.py)
 * [Scene class, different frames](../src/scene.py)
@@ -159,6 +176,19 @@ Click to see source code: [Background color](../src/color.py)
 
 ## Fire Bullets
 * [spaceship fire](../src/rect13.py)
+* [Hit target]()
+
+## Button
+* [](../src/button1.py)
+* [](../src/button2.py)
+* [](../src/button3.py)
+* [](../src/button4.py)
+* [](../src/button5.py)
+* [](../src/button6.py)
+* [Button class extends Rect](../src/button7.py)
+
+💡👉 Can get mouse position any time.
+
 
 ## Fight Chimp
 * [Display Chimp image](../src/displayChimp.py)
@@ -170,5 +200,6 @@ Click to see source code: [Background color](../src/color.py)
 ## Sample games
 * [Fist and Chimp](../src/chimp.py)
 * [Ping-Pong](../src/pong.py)
+* [Game Base](../src/app.py)
 
 
