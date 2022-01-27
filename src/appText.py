@@ -5,8 +5,8 @@ class App(AppSuper):
         # pygame.display.set_caption("My new title")
         # self.bg = (255, 255, 255)
         # self.screen.fill(self.bg)
-        Text("Hello world!", (100,100), fontcolor=(0,255,0)).draw()
-        text = Text("Welcome to PyGame!",(100, 180),"curlz", 30, (255,0,0))
+        Text(AppSuper.screen, "Hello world!", (100,100), fontcolor=(0,255,0)).draw()
+        text = Text(AppSuper.screen, "Welcome to PyGame!",(100, 180),"curlz", 30, (255,0,0))
         text.draw()
         text.setPos((50, 220)).draw()
         text.setPos((50, 250)).setFont(fontcolor=(200,234,122)).draw()
@@ -14,9 +14,10 @@ class App(AppSuper):
         pygame.display.update()
 
 class Text:
-    def __init__(self, text, pos, fontname='Arial Bold', fontsize=72, fontcolor=(0,0,0)):
+    def __init__(self, screen, text, pos, fontname='Arial Bold', fontsize=72, fontcolor=(0,0,0)):
         self.text = text
         self.pos = pos
+        self.screen = screen
         self.setFont(fontname, fontsize, fontcolor)
         self.render()
 
@@ -42,7 +43,7 @@ class Text:
 
     def draw(self):
         """Draw the text image to the screen."""
-        App.screen.blit(self.img, self.rect)
+        self.screen.blit(self.img, self.rect)
 
 if __name__ == '__main__':
     App().mainloop()

@@ -1,27 +1,27 @@
 from rect import *
-  
-rect1 = pygame.Rect(20,20,20,20)
-collisionSound = pygame.mixer.Sound('src/resources/punch.wav')    
-img = pygame.image.load('src/resources/Gold-Medal.gif')
-img = pygame.transform.scale(img, (300,300))
-gap = 40
-rect = img.get_rect()
-rect2 = Rect(rect.left+gap, rect.top+gap, rect.width-2*gap, rect.height-2*gap)
-# rect = Rect(rect.left+10, rect.right-10, rect.width-20, rect.height-20)
+
+n = 30
+rects = random_rects(n)
 while running:
     for event in pygame.event.get():
         if event.type == QUIT:
             running = False
         if event.type == KEYDOWN:
-            if event.key in dir:
-                v = dir[event.key]
-                rect1.move_ip(v)
-                if rect1.colliderect(rect2):
-                    collisionSound.play()
+            if event.key == K_r:
+                rects = random_rects(n)
     screen.fill(GRAY)
-    pygame.draw.rect(screen, GREEN, rect, 2)
-    pygame.draw.rect(screen, GREEN, rect1, 1)
-    pygame.draw.rect(screen, GREEN, rect2, 1)
-    screen.blit(img, rect)
+    intersecting = []
+    for i in range(n-1):
+        r0 = rects[i]
+        for j in range(i+1, n):
+            r1 = rects[j]
+            if r0.colliderect(r1):
+                intersecting.append(r0)
+                intersecting.append(r1)
+                break
+    for i, r in enumerate(rects):
+        color = RED if r in intersecting else YELLOW
+        pygame.draw.rect(screen, color, r)
+        draw_text(str(i), r.topleft)
     pygame.display.flip()
 pygame.quit()

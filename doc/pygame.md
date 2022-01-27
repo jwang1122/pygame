@@ -41,6 +41,7 @@ preferred installer program
 - [Collision](#collision)
 - [Fire Bullets](#fire-bullets)
 - [Fight Chimp](#fight-chimp)
+- [Sample games](#sample-games)
 
 ```mermaid
 graph TB
@@ -119,6 +120,7 @@ Click to see source code: [Background color](../src/color.py)
 
 ## Draw Text
 * [Draw Text](../src/drawText.py)
+* [Editable Text](../src/editText.py)
 * [PyGame Coordinates](../src/coordinates.py)
 
 ## Draw Shapes
@@ -141,19 +143,23 @@ Click to see source code: [Background color](../src/color.py)
 * [Super class](../src/appSuper.py)
 * [Subclass](../src/app.py)
 * [Text class](../src/appText.py)
+* [My App Super class](../src/myapp.py)
+* [Scene class, different frames](../src/scene.py)
+
   
 ## Making sounds
 [wav, mp3](../src/sound1.py)
 
 ## Collision
 * [collidepoint()](../src/rect9.py)
-* [colliderect()](../src/rect10.py)
-* [Understand Collision](../src/rect11.py)
-* [hit head](../src/rect12.py)
+* [colliderect()](../src/rect20.py)
+* [Understand Collision](../src/rect21.py)
+* [hit head](../src/rect22.py)
+* [fire missle](../src/rect23.py)
 
 ## Fire Bullets
 * [spaceship fire](../src/rect13.py)
-* 
+
 ## Fight Chimp
 * [Display Chimp image](../src/displayChimp.py)
 * [move chimp on screen](../src/moveChimp.py)
@@ -161,6 +167,8 @@ Click to see source code: [Background color](../src/color.py)
 * [mouse click punch sound](../src/fistPunch.py)
 * [](../src/fistHitChimp.py)
 
-
+## Sample games
+* [Fist and Chimp](../src/chimp.py)
+* [Ping-Pong](../src/pong.py)
 
 
