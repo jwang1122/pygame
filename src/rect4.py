@@ -1,3 +1,6 @@
+"""
+copy rectan
+"""
 from rect import *
 
 rect0 = Rect(50, 60, 200, 80)
@@ -12,7 +15,7 @@ while running:
                 v = dir[event.key]
                 rect.move_ip(v)
     screen.fill(GRAY)
-    pygame.draw.rect(screen, BLUE, rect0, 1)
     pygame.draw.rect(screen, RED, rect, 4)
+    pygame.draw.rect(screen, BLUE, rect0, 1)
     pygame.display.flip()
 pygame.quit()

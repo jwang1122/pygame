@@ -1,3 +1,6 @@
+"""
+response key hit by handle event
+"""
 import pygame
 from pygame.locals import *
 

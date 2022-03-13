@@ -42,9 +42,9 @@ preferred installer program
 - [Use class](#use-class)
 - [Making sounds](#making-sounds)
 - [Collision](#collision)
+- [Fight Chimp](#fight-chimp)
 - [Fire Bullets](#fire-bullets)
 - [Button](#button)
-- [Fight Chimp](#fight-chimp)
 - [Sample games](#sample-games)
 
 ```mermaid
@@ -116,6 +116,22 @@ YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yell
 * [Move image with muse](../src/image1.py)
 * [rotate, change size of image](../src/image2.py)
 
+❓ What is Surface?
+✔️ surfaces are generally used to represent the appearance of the object and its position on the screen. All the objects, text, images that we create in Pygame are created using surfaces.
+
+❓ What is flip()?
+✔️ display.flip() will update the contents of the entire display
+
+❓ What is update()?
+✔️ display.update() allows to update a portion of the screen, instead of the entire area of the screen. Passing no arguments, updates the entire display. display.update() is faster in most cases.
+
+❓ What is blit()?
+✔️blit stands for Block Image Transfer—and it's going to copy the contents of one Surface onto another Surface .
+
+```py
+pygame.display.set((w, h), pygame.DOUBLEBUF)
+```
+
 ## color
 Click to see source code: [Background color](../src/color.py)
 
@@ -168,14 +184,23 @@ def draw_text(text, pos):
 [wav, mp3](../src/sound1.py)
 
 ## Collision
-* [collidepoint()](../src/rect9.py)
-* [colliderect()](../src/rect20.py)
-* [Understand Collision](../src/rect21.py)
-* [hit head](../src/rect22.py)
-* [fire missle](../src/rect23.py)
+* [collidepoint(), randompoints()](../src/rect9.py)
+* [colliderect(), randomrects()](../src/rect10.py)
+* [colliderect(), red collisioned](../src/rect11.py)
+* [colliderect(), arrow key collision](../src/rect20.py)
+* [Understand Collision, large image, small hit area](../src/rect21.py)
+* [hit chimp head](../src/rect22.py)
+
+## Fight Chimp
+* [Display Chimp image](../src/displayChimp.py)
+* [move chimp on screen](../src/moveChimp.py)
+* [mouse Fist](../src/mouseFist.py)
+* [mouse click punch sound](../src/fistPunch.py)
+* [](../src/fistHitChimp.py)
+
 
 ## Fire Bullets
-* [spaceship fire](../src/rect13.py)
+* [fire missle](../src/rect23.py)
 * [Hit target]()
 
 ## Button
@@ -189,13 +214,6 @@ def draw_text(text, pos):
 
 💡👉 Can get mouse position any time.
 
-
-## Fight Chimp
-* [Display Chimp image](../src/displayChimp.py)
-* [move chimp on screen](../src/moveChimp.py)
-* [mouse Fist](../src/mouseFist.py)
-* [mouse click punch sound](../src/fistPunch.py)
-* [](../src/fistHitChimp.py)
 
 ## Sample games
 * [Fist and Chimp](../src/chimp.py)

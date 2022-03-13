@@ -13,7 +13,7 @@ YELLOW = (255,255,0)
 CYAN = (0, 255, 255)
 MAGENTA = (255,0,255)
 
-bg = BLACK
+bg = MAGENTA
 key_dict = {pygame.K_k:BLACK, pygame.K_r:RED, pygame.K_g:GREEN, pygame.K_b:BLUE,
 pygame.K_y:YELLOW, pygame.K_c:CYAN, pygame.K_m:MAGENTA, pygame.K_w:WHITE}
 
