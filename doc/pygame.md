@@ -45,6 +45,7 @@ preferred installer program
 - [Fight Chimp](#fight-chimp)
 - [Fire Bullets](#fire-bullets)
 - [Button](#button)
+- [animation](#animation)
 - [Sample games](#sample-games)
 
 ```mermaid
@@ -214,10 +215,14 @@ def draw_text(text, pos):
 
 💡👉 Can get mouse position any time.
 
+## animation
+[Super Mario](../src/animation.py)
 
 ## Sample games
 * [Fist and Chimp](../src/chimp.py)
 * [Ping-Pong](../src/pong.py)
 * [Game Base](../src/app.py)
 
-
+![](airfighter.gif)
+![](smallFighter.png)
+![](missle.png)

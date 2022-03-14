@@ -4,28 +4,24 @@ from appsuper import loadSound
 class Snake:
     SIZE = 40
     def __init__(self):
-        self.x = [40, 40]
-        self.y = [40, 0]
+        self.body = [[Snake.SIZE,Snake.SIZE], [Snake.SIZE,0]]
         self.head, self.headRect = loadImage("head.png")
         self.tail, self.tailRect = loadImage("block.jpg")
-        self.speed = (0, 40)
+        self.speed = (0,Snake.SIZE)
 
     def walk(self):
-        for i in range(len(self.x)-1, 0, -1):
-            self.x[i] = self.x[i-1]
-            self.y[i] = self.y[i-1]
-        
-        self.x[0] += self.speed[0]
-        self.y[0] += self.speed[1]
-
+        for i in range(len(self.body)-1, 0, -1):
+            self.body[i] = self.body[i-1].copy()    
+        self.body[0][0] += self.speed[0]
+        self.body[0][1] += self.speed[1]
         self.draw()
 
     def draw(self):
-        for i in range(len(self.x)):
+        for i in range(len(self.body)):
             if i==0:
-                Game.screen.blit(self.head, (self.x[i], self.y[i]))
+                Game.screen.blit(self.head, self.body[i])
             else:
-                Game.screen.blit(self.tail, (self.x[i], self.y[i]))
+                Game.screen.blit(self.tail, self.body[i])
 
 class Apple:
     def __init__(self):

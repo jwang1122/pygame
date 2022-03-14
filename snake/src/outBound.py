@@ -25,7 +25,7 @@ class Snake:
             if i==0:
                 Game.screen.blit(self.head, (self.x[i], self.y[i]))
             else:
-                Game.screen.blit(self.tail, (self.x[i], self.y[i]))
+                pygame.draw.circle(Game.screen, (0,255,100), (self.x[i]+20, self.y[i]+20), 20, 0)
 
 class Apple:
     def __init__(self):
@@ -40,8 +40,8 @@ class Apple:
         Game.screen.blit(self.image, self.rect)
 
 class Game(AppSuper):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, fps=5):
+        super().__init__(fps=fps)
         self.apple = Apple()
         self.snake = Snake()
         self.bgMusic = loadSound("bg_music_1.mp3")
@@ -65,6 +65,11 @@ class Game(AppSuper):
             self.snake.x.append(-1)
             self.snake.y.append(-1)
 
+        for i in range(3, len(self.snake.x)):
+            if self.collision(self.snake.x[0], self.snake.y[0], self.snake.x[i], self.snake.y[i]):
+                self.crash.play()
+                raise Exception("Hit snake body!!")
+                
         if not (0<=self.snake.x[0]<=Game.width and 0 <= self.snake.y[0] <= Game.height):
             self.crash.play()
             raise Exception("Hit the boundary error!")

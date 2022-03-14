@@ -29,7 +29,6 @@ def random_rects(n):
 
 def loadImage(filename, scale=1):
     filename = os.path.join('src/resources',filename)
-    print(filename)
     image = pygame.image.load(filename)
     image = pygame.transform.scale(image, (image.get_width()*scale, image.get_height()*scale))
     rect = image.get_rect()
@@ -37,7 +36,7 @@ def loadImage(filename, scale=1):
 
 
 class AppSuper:
-    arrowKeys = {K_LEFT:(-5, 0), K_RIGHT:(5, 0), K_UP:(0, -5),K_DOWN:(0, 5)}
+    arrowKeys = {K_LEFT:(-15, 0), K_RIGHT:(15, 0), K_UP:(0, -15),K_DOWN:(0, 15)}
 
     running = True
     flags = RESIZABLE
