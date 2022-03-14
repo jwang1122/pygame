@@ -34,6 +34,9 @@ def loadImage(filename, scale=1):
     rect = image.get_rect()
     return image, rect
 
+def loadSound(filename):
+    filename = os.path.join('src/resources', filename)
+    return pygame.mixer.Sound(filename)
 
 class AppSuper:
     arrowKeys = {K_LEFT:(-15, 0), K_RIGHT:(15, 0), K_UP:(0, -15),K_DOWN:(0, 15)}
