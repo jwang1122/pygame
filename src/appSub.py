@@ -1,4 +1,4 @@
-from appSuper import *
+from appsuper import *
 
 class App(AppSuper):
     def paint(self):

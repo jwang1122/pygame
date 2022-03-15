@@ -1,4 +1,4 @@
-from appSuper import *
+from appsuper import *
 
 class Demo(AppSuper):
     def __init__(self):

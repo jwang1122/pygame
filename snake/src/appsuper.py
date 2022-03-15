@@ -9,8 +9,8 @@ def draw_text(text, pos):
     AppSuper.screen.blit(img, pos)
 
 def random_point():
-    x = randint(1, 24)*40
-    y = randint(1, 19)*40
+    x = randint(1, 20)*40
+    y = randint(1, 12)*40
     return (x, y)
 
 def random_points(n):
@@ -43,8 +43,8 @@ class AppSuper:
 
     running = True
     flags = RESIZABLE
-    width=1000
-    height=800
+    width=800
+    height=600
     screen = pygame.display.set_mode((width,height), flags)
     RED = (255, 0, 0)
     GRAY = (150, 150, 150)
@@ -53,7 +53,7 @@ class AppSuper:
     GREEN = (0, 255, 50)
     BLACK = (0,0,0)
 
-    def __init__(self, title="PyGame", bg=(0, 255, 255), fps=30):
+    def __init__(self, title="PyGame", bg=(0, 255, 255), fps=3):
         pygame.init()
         pygame.display.set_caption(title)
         self.bg = bg
