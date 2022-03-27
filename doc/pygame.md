@@ -12,6 +12,10 @@ Click to see website: [PyGame Document](https://www.pygame.org/docs/)
 
 [Space Invaders](https://www.youtube.com/watch?v=Q-__8Xw9KTM)
 
+[Program Arcade Games](http://programarcadegames.com/index.php?chapter=example_code)
+
+[Physics Simulations](https://www.youtube.com/watch?v=tLsi2DeUsak)
+
 📌 pip: Package Installer for Python
 preferred installer program
 
