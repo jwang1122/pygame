@@ -3,6 +3,11 @@ from pygame.locals import *
 import os
 from random import randint
 
+
+def jump(t, v0=1, y0=0, scale=10000, g = -9.807):
+    y=(y0 + v0*t + g*t**2/2)*scale
+    return y
+
 def draw_text(text, pos):
     font = pygame.font.SysFont('Arial Bold', 25)    
     img = font.render(text, True, AppSuper.BLACK)
@@ -35,6 +40,7 @@ def loadImage(filename, scale=1):
     return image, rect
 
 def loadSound(filename):
+    pygame.mixer.init()
     filename = os.path.join('src/resources', filename)
     return pygame.mixer.Sound(filename)
 
@@ -52,9 +58,11 @@ class AppSuper:
     YELLOW = (255, 255, 0)
     GREEN = (0, 255, 0)
     BLACK = (0,0,0)
+    CYAN = (0, 255,255)
 
-    def __init__(self, title="PyGame", bg=(0, 255, 255), fps=30):
+    def __init__(self, title="PyGame", bg=CYAN, fps=30):
         pygame.init()
+        pygame.mixer.init()
         pygame.display.set_caption(title)
         self.bg = bg
         self.fps = fps

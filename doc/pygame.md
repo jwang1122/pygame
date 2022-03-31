@@ -51,9 +51,12 @@ preferred installer program
 - [Fight Chimp](#fight-chimp)
 - [Fire Bullets](#fire-bullets)
 - [Button](#button)
+- [Draw Shapes](#draw-shapes-1)
 - [animation](#animation)
 - [Sample games](#sample-games)
+- [Snake Eat Apple](#snake-eat-apple)
 - [Online Game](#online-game)
+- [References](#references)
 
 ```mermaid
 graph TB
@@ -171,6 +174,7 @@ def draw_text(text, pos):
 
 * [Draw Rectangle](../src/drawRectangle.py)
 * [Draw Eclipses, catch mouse actions](../src/drawEllipses.py)
+* [](../src/drawShaps.py)
 * [draw rectagle on screen](../src/rect1.py)
 * [Special points of rectangle](../src/rect2.py)
 * [change rectangle location by key](../src/rect3.py)
@@ -186,6 +190,7 @@ def draw_text(text, pos):
 * [Text class](../src/appText.py)
 * [My App Super class](../src/myapp.py)
 * [Scene class, different frames](../src/scene.py)
+* [Game class](../src/game.py)
 
   
 ## Making sounds
@@ -203,12 +208,47 @@ def draw_text(text, pos):
 * [Display Chimp image](../src/displayChimp.py)
 * [move chimp on screen](../src/moveChimp.py)
 * [mouse Fist](../src/mouseFist.py)
+* [](../src/chimprollover.py)
 * [mouse click punch sound](../src/fistPunch.py)
 * [](../src/fistHitChimp.py)
-
-
+* [OOP design](../src/FistRolloverChimp.py)
+* [add Text on Screen](../src/appText.py)
+* [Choose Font](../src/font1.py)
+* [add score missing, and hit](../src/FistRolloverChimp1.py)
+* [dice rotate](../src/dice.py)
+* 
 ## Fire Bullets
+* [](../src/bullet.py)
+* [](../src/bullet2.py)
 * [fire missle](../src/rect23.py)
+* [OOP arrow key control spaceship](../src/spaceship.py)
+* [](fighter.py)
+```mermaid
+classDiagram
+
+class MainFrame{
+    spaceship:Spaceship
+    handleEvent()
+    paint()
+}
+class Spaceship{
+    image
+    bullet:Bullet
+    draw()
+    fire()
+    move()
+}
+class Bullet{
+    rect:Rect
+    isFire:bool
+    draw()
+    move()
+    fire()
+}
+
+Spaceship *-- Bullet
+MainFrame *--Spaceship
+```
 * [Hit target]()
 
 ## Button
@@ -222,18 +262,62 @@ def draw_text(text, pos):
 
 💡👉 Can get mouse position any time.
 
-## animation
-[Super Mario](../src/animationMario.py)
-[Scene of game](../src/animationCloud.py)
+## Draw Shapes
+* [Draw Line](../src/drawLine.py)
+* [Draw Circle](../src/drawCircle.py)
+* [Draw Arc](../src/drawArc.py)
+* [Draw Ellipes](../src/drawEllipses.py)
+* [Draw Polygon](../src/drawPolygon.py)
 
+
+## animation
+* [Super Mario](../src/animationMario.py)
+* [animation Snow](../src/animation1.py)
+* [Scene of game](../src/animationCloud.py)
+* [block jump](../src/jump1.py)
+
+![](physicsformular.jpg)
+
+$$y = y_0 + v_{y_0} t - \frac 1 2 g t^2 $$
+
+* [Jump formular](../src/jumpformular.py)
+* [Stright-up jump](../src/jump2.py)
+* [Forward jump](../src/jump3.py)
+* [rect jump](../src/rectJumper.py)
+
+* [jump block](../src/blockMoving.py)
+
+* [Change image size](../src/changeImage.py)
+
+❓what is RGBA?
+✔️ RGBA stands for red green blue alpha. While it is sometimes described as a color space, it is actually a three-channel RGB color model supplemented with a fourth alpha channel.
+
+![](RGBA_comp.png)
+Example of an RGBA image composited over a checkerboard background. alpha is 0% at the top and 100% at the bottom.
+
+![](HexRGBAbits.png)
+
+* [moving clouds](../src/clouds.py)
+* [moving fighters](../src/fighter.py)
+* [stop on rect](../src/moveblock.py)
 ## Sample games
 * [Fist and Chimp](../src/chimp.py)
 * [Ping-Pong](../src/pong.py)
 * [Game Base](../src/app.py)
-
+* [space invaders](spaceInvaders.mp4)
 ![](airfighter.gif)
 ![](smallFighter.png)
 ![](missle.png)
 
+## Snake Eat Apple
+* [Display Snake](../snake/src/snakeApple.py)
+* [Snake move](../snake/src/snakeMove.py)
+* [snake with long tail](../snake/src/snakeMoveVector.py)
+* [snake eat apple](../snake/src/collision.py)
+  
+  
 ## Online Game
 [pygame and socket](https://www.youtube.com/watch?v=McoDjOCb2Zo)
+
+## References
+[Working on Image](https://www.geeksforgeeks.org/working-images-python/)

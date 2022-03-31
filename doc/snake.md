@@ -33,9 +33,14 @@ Game *-- Snake
 [display apple and snake](../snake/src/snakeApple.py)
 
 ## move snake
+
+![](snakeMove.svg)
+
 [move snake by key](../snake/src/snakeMove.py)
 
 😢❌: do not allow snake goes backwards?
+
+[](../snake/src/snakeMoveVector.py)
 
 ## collision
 [](../snake/src/collision.py)
