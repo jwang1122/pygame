@@ -6,6 +6,9 @@ class Player:
         self.rect.center = (600, 250)
     def draw(self):
         Game.screen.blit(self.img, self.rect)
+    
+    def move(self, speed):
+        self.rect.move_ip(speed)
 
 class Fighter:
     def __init__(self) -> None:
@@ -31,7 +34,8 @@ class Game(AppSuper):
         self.speed = 5
     
     def handleEvent(self, event): # leave this function for subclass to implement
-        pass
+        if event.type==KEYDOWN and event.key in self.arrowKeys:
+            self.player.move(self.arrowKeys[event.key])
 
     def paint(self): # leave this function for subclass to implement
         self.screen.fill(self.bg)

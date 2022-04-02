@@ -49,12 +49,14 @@ preferred installer program
 - [Making sounds](#making-sounds)
 - [Collision](#collision)
 - [Fight Chimp](#fight-chimp)
+- [Yahtzee Dice Game](#yahtzee-dice-game)
 - [Fire Bullets](#fire-bullets)
 - [Button](#button)
 - [Draw Shapes](#draw-shapes-1)
 - [animation](#animation)
 - [Sample games](#sample-games)
 - [Snake Eat Apple](#snake-eat-apple)
+- [2D Game Categorization](#2d-game-categorization)
 - [Online Game](#online-game)
 - [References](#references)
 
@@ -121,6 +123,7 @@ Click to see source code: [Time tick](../src/timeTick.py)
 ```py
 YELLO_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_yellow.png'))
 ```
+* [](../src/main.py)
 * [load and display image](../src/loadImage2.py)
 * [loadImage(), scale and move image](../src/loadImage3.py)
 * [Move Image](../src/moveImage.py)
@@ -153,12 +156,14 @@ Click to see source code: [Background color](../src/color.py)
 * [Draw Text](../src/drawText.py)
 * [Editable Text](../src/editText.py)
 * [PyGame Coordinates](../src/coordinates.py)
+* [display text](../src/myapp.py)
 
 ## Draw Shapes
 * [draw line](../src/drawLine.py)
 * [draw arc](../src/drawArc.py)
 * [draw circle](../src/drawCircle.py)
 * [common function for rectangle](../src/rect.py)
+* [](../src/multipleRect.py)
   
 🔑⚡️ **Knowlodge Base:**
 1. get moving speed based on arrow key from dict [](../src/rect4.py)
@@ -175,6 +180,9 @@ def draw_text(text, pos):
 * [Draw Rectangle](../src/drawRectangle.py)
 * [Draw Eclipses, catch mouse actions](../src/drawEllipses.py)
 * [](../src/drawShaps.py)
+* [use mouse draw shape](../src/mouse4.py)
+* [](../src/mouseDraw.py)
+* 
 * [draw rectagle on screen](../src/rect1.py)
 * [Special points of rectangle](../src/rect2.py)
 * [change rectangle location by key](../src/rect3.py)
@@ -214,19 +222,25 @@ def draw_text(text, pos):
 * [OOP design](../src/FistRolloverChimp.py)
 * [add Text on Screen](../src/appText.py)
 * [Choose Font](../src/font1.py)
+* [add score missing, and hit](../src/FistRolloverChimp.py)
 * [add score missing, and hit](../src/FistRolloverChimp1.py)
+* [add background]()
+
+## Yahtzee Dice Game
 * [dice rotate](../src/dice.py)
-* 
+
+[Yahtzee dice game](Yahtzee.pdf)
+
 ## Fire Bullets
 * [](../src/bullet.py)
 * [](../src/bullet2.py)
 * [fire missle](../src/rect23.py)
 * [OOP arrow key control spaceship](../src/spaceship.py)
-* [](fighter.py)
+
 ```mermaid
 classDiagram
 
-class MainFrame{
+class Game{
     spaceship:Spaceship
     handleEvent()
     paint()
@@ -249,6 +263,9 @@ class Bullet{
 Spaceship *-- Bullet
 MainFrame *--Spaceship
 ```
+* [moving fighter](../src/fighter.py)
+* [moving fighter with player](../src/fighter1.py)
+
 * [Hit target]()
 
 ## Button
@@ -284,7 +301,7 @@ $$y = y_0 + v_{y_0} t - \frac 1 2 g t^2 $$
 * [Stright-up jump](../src/jump2.py)
 * [Forward jump](../src/jump3.py)
 * [rect jump](../src/rectJumper.py)
-
+* [](../src/scroller.py)
 * [jump block](../src/blockMoving.py)
 
 * [Change image size](../src/changeImage.py)
@@ -300,24 +317,86 @@ Example of an RGBA image composited over a checkerboard background. alpha is 0% 
 * [moving clouds](../src/clouds.py)
 * [moving fighters](../src/fighter.py)
 * [stop on rect](../src/moveblock.py)
+* [](../src/moveWithWall.py)
+* [walk around wall](../src/runner.py)
+
 ## Sample games
 * [Fist and Chimp](../src/chimp.py)
 * [Ping-Pong](../src/pong.py)
+* [](../src/pong2.py)
+* [](../src/spaceFight.py)
 * [Game Base](../src/app.py)
 * [space invaders](spaceInvaders.mp4)
+* [walk around wall](../src/runner.py)
+
 ![](airfighter.gif)
 ![](smallFighter.png)
 ![](missle.png)
 
 ## Snake Eat Apple
+* [](../src/snake.py)
 * [Display Snake](../snake/src/snakeApple.py)
 * [Snake move](../snake/src/snakeMove.py)
 * [snake with long tail](../snake/src/snakeMoveVector.py)
 * [snake eat apple](../snake/src/collision.py)
   
-  
+## 2D Game Categorization
+
+```mermaid
+graph TB
+
+GAME([2D Games])
+CHAR["Characters<br>(Fist)"]
+OBJ["Objects<br>(Chimp)"]
+ENV["Environment<br>(Background)"]
+SOUND["Sound Effects"]
+MOVE["Movement<br>(mouse or key controlled <br>time controlled)"]
+SIDE[Side move]
+ROLL[Vertical-Scrolling]
+ANIM[Animation]
+
+GAME --> CHAR & OBJ & ENV & MOVE & SOUND
+MOVE --> SIDE & ROLL & ANIM
+
+classDef start fill:#2DD276,stroke:#096125,stroke-width:4px,color:white;
+classDef process fill:#F46624,stroke:#F46624,stroke-width:4px,color:white;
+
+class GAME start
+class CHAR,OBJ,ENV,MOVE,SOUND process
+```
+
+* Role-Playing Games(RPG)
+> More commonly known as RPG, role-playing games are games with a protagonist or hero who goes through different levels to improve their skills and defeat enemies. 
+* Co-op Games
+>Cooperative games, or commonly referred to as co-op games, bring players together often in the same setting. But instead of working against each other, as is the case for multiplayer games in general, players work as a group toward a common goal.
+samples are: Castle Crashers, Terraria, Ninja Turtles...
+* Run and Gun, Beat 'Em Ups, Hack and Slash
+> Action-packed and built for fighting, these three types of games all have a similar flavor with some nuances.
+* Platformers
+> As the name suggests, platformers let players surmount obstacles and progress through levels by “[jumping] or [climbing] between different platforms on screen,” says STEM-oriented educational group iD Tech. 
+* Puzzle Games
+>Popular puzzle games are Unblock Me (2009), Candy Crush (2012), 2048 (2014), and You Must Build A Boat (2015). 
+
+```mermaid
+graph TB
+
+GAME([2D Games])
+FIGHT[Gun, Missle, fight]
+PLAT[Platformer<br> scene, jump, treasure]
+BOARD[Board Game<br>Chess, Poker, Domino, Dice]
+
+GAME --> FIGHT & PLAT & BOARD
+classDef start fill:#2DD276,stroke:#096125,stroke-width:4px,color:white;
+classDef process fill:#F46624,stroke:#F46624,stroke-width:4px,color:white;
+
+class GAME start
+class FIGHT,PLAT,BOARD process
+```
+[2D Game design pattern](https://www.gamedeveloper.com/design/level-design-patterns-in-2d-games)
 ## Online Game
 [pygame and socket](https://www.youtube.com/watch?v=McoDjOCb2Zo)
+* [online game](../src/mysocket.py)
 
 ## References
 [Working on Image](https://www.geeksforgeeks.org/working-images-python/)
+[Popular 2D Games](https://narrasoft.com/what-are-the-different-types-of-2d-games/)

@@ -8,9 +8,9 @@ def jump(t, v0=1, y0=0, scale=10000, g = -9.807):
     y=(y0 + v0*t + g*t**2/2)*scale
     return y
 
-def draw_text(text, pos):
+def draw_text(text, pos, forecolor=(0,0,0)):
     font = pygame.font.SysFont('Arial Bold', 25)    
-    img = font.render(text, True, AppSuper.BLACK)
+    img = font.render(text, True, forecolor)
     AppSuper.screen.blit(img, pos)
 
 def random_point():

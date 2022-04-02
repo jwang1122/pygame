@@ -3,9 +3,9 @@ from pygame.locals import *
 import os
 from random import randint
 
-def draw_text(text, pos):
+def draw_text(text, pos, forecolor=(0,0,0)):
     font = pygame.font.SysFont('Arial Bold', 25)    
-    img = font.render(text, True, AppSuper.BLACK)
+    img = font.render(text, True, forecolor)
     AppSuper.screen.blit(img, pos)
 
 def random_point():

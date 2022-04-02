@@ -41,4 +41,5 @@ if __name__ == '__main__':
     # rotate("fighter1.png", "fighter2.png", -90)
     # makeTransparent("fighter2.png", "fighter3.png")
     # changeSize("fighter3.png", "fighter4.png", 60, 50)
-    changeSize("fighterjet.png", "fighterjet1.png", 70, 60)
+    # changeSize("fighterjet.png", "fighterjet1.png", 70, 60)
+    changeSize("forest.jpg", "forest1.jpg", 640, 480)
