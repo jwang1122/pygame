@@ -3,27 +3,27 @@ from pygame.locals import *
 import os
 from random import randint
 
-def draw_text(text, pos, forecolor=(0,0,0)):
+def drawText(text, pos, forecolor=(0,0,0)):
     font = pygame.font.SysFont('Arial Bold', 25)    
     img = font.render(text, True, forecolor)
     AppSuper.screen.blit(img, pos)
 
-def random_point():
-    x = randint(1, 20)*40
-    y = randint(1, 12)*40
+def randomPoint():
+    x = randint(1, 19)*40
+    y = randint(1, 11)*40
     return (x, y)
 
-def random_points(n):
+def randomPoints(n):
     points = []
     for i in range(n):
-        p = random_point()
+        p = randomPoint()
         points.append(p)
     return points
 
-def random_rects(n):
+def randomRects(n, width, height):
     rects = []
     for i in range(n):
-        r = Rect(random_point(), (20, 20))
+        r = Rect(randomPoint(), (width, height))
         rects.append(r)
     return rects
 

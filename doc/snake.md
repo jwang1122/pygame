@@ -43,4 +43,5 @@ Game *-- Snake
 [](../snake/src/snakeMoveVector.py)
 
 ## collision
-[](../snake/src/collision.py)
+[Eat apple](../snake/src/collision.py)
+[rasie Exception when snake hit bounds](../snake/src/outBound.py)

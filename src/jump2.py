@@ -13,13 +13,13 @@ class Mario():
     def jump(self):
         if self.isJump:
             self.t += self.tgap
-            deltY = jump(self.t, 0.49)
+            deltY = jump(self.t, 0.6)
             self.rect.bottom = self.bottom - deltY
             if deltY<=0:
                 self.rect.bottom = self.bottom
                 self.t = 0
                 self.isJump = False
-                
+
     def forward(self):
         self.rect.left += 5
 

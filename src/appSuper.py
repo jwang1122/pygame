@@ -13,24 +13,32 @@ def draw_text(text, pos, forecolor=(0,0,0)):
     img = font.render(text, True, forecolor)
     AppSuper.screen.blit(img, pos)
 
-def random_point():
+def randomPoint():
     x = randint(0, AppSuper.width)
     y = randint(0, AppSuper.height)
     return (x, y)
 
-def random_points(n):
+def randomPoints(n):
     points = []
     for i in range(n):
-        p = random_point()
+        p = randomPoint()
         points.append(p)
     return points
 
-def random_rects(n):
+def randomRects(n, width, height):
     rects = []
     for i in range(n):
-        r = Rect(random_point(), (20, 20))
-        rects.append(r)
+        pos = randomPoint()
+        rects.append(Rect(pos, (width, height)))
     return rects
+
+
+# def randomRects(n):
+#     rects = []
+#     for i in range(n):
+#         r = Rect(randomPoint(), (20, 20))
+#         rects.append(r)
+#     return rects
 
 def loadImage(filename, scale=1):
     filename = os.path.join('src/resources',filename)
@@ -45,7 +53,13 @@ def loadSound(filename):
     return pygame.mixer.Sound(filename)
 
 class AppSuper:
+    LEFT = 0
+    RIGHT = 1
+    UP = 2
+    DOWN = 3
     arrowKeys = {K_LEFT:(-15, 0), K_RIGHT:(15, 0), K_UP:(0, -15),K_DOWN:(0, 15)}
+    speeds = {K_LEFT:(-15, 0), K_RIGHT:(15, 0), K_UP:(0, -15),K_DOWN:(0, 15)}
+    directions = {K_LEFT:LEFT, K_RIGHT:RIGHT, K_UP:UP,K_DOWN:DOWN}
 
     running = True
     flags = RESIZABLE

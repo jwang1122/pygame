@@ -31,10 +31,10 @@ class Apple:
     def __init__(self):
         self.image = pygame.image.load("snake/resources/apple.jpg")
         self.rect = self.image.get_rect()
-        self.rect.topleft = random_point()
+        self.rect.topleft = randomPoint()
 
     def next(self):
-        self.rect.topleft = random_point()
+        self.rect.topleft = randomPoint()
 
     def draw(self):
         Game.screen.blit(self.image, self.rect)

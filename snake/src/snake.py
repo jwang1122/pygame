@@ -1,6 +1,4 @@
 from appsuper import *
-from appsuper import loadSound
-import sys
 
 class Snake:
     SIZE = 40
@@ -30,8 +28,7 @@ class Snake:
 
 class Apple:
     def __init__(self):
-        self.image = pygame.image.load("snake/resources/apple3.png")
-        self.rect = self.image.get_rect()
+        self.image, self.rect = loadImage("apple3.png")
         self.rect.topleft = randomPoint()
 
     def next(self):
@@ -70,26 +67,23 @@ class Game(AppSuper):
 
             for i in range(3, len(self.snake.x)):
                 if self.collision(self.snake.x[0], self.snake.y[0], self.snake.x[i], self.snake.y[i]):
-                    self.crash.play(0)
+                    self.crash.play()
                     self.gameover = True
                     
             if not (0<=self.snake.x[0]<=Game.width and 0 <= self.snake.y[0] <= Game.height):
-                self.crash.play(0)
+                self.crash.play()
                 self.snake.speed = (0,0)
                 self.gameover = True
         else:
-            img,rect = loadImage("gameover1.jpg")
-            rect.move_ip((280,150))
+            img,rect = loadImage("gameover1.png")
+            rect.move_ip((250,150))
             Game.screen.blit(img, rect)
-            # self.crash.stop()
 
         self.displayScore()
         pygame.display.update()
 
     def displayScore(self):
-        font = pygame.font.SysFont('arial',30)
-        score = font.render(f"Score: {len(self.snake.x)}",True,(200,200,200))
-        Game.screen.blit(score,(850,10))
+        drawText(f"Score: {len(self.snake.x)}", (700, 10), (255,255,255))
 
     def collision(self, x1, y1, x2, y2):
         rect1 = Rect(x1, y1, 40, 40)
