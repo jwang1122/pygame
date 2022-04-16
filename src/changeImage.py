@@ -14,14 +14,18 @@ def changeSize(fileIn, fileOut, width1, height1, scale=None):
     print("Successfule")
 
 def makeTransparent(fileIn, fileOut):
+    r,g,b=247,247,247
     img = Image.open(fileIn)
     img = img.convert("RGBA")
     datas = img.getdata()
 
     newData = []
 
+    # for item in datas:
+    #     print(item[0],item[1],item[2],item[3])
+    #     break
     for item in datas:
-        if item[0] == 247 and item[1]==247 and item[2]==247:
+        if item[0] == r and item[1]==g and item[2]==b:
             newData.append((255,255,255,0))
         else:
             newData.append(item)
@@ -39,7 +43,10 @@ if __name__ == '__main__':
     # changeSize("head.png", "head1.png", 40, 40)
     # changeSize("fighter.png", "fighter1.png", 400, 400)
     # rotate("fighter1.png", "fighter2.png", -90)
-    # makeTransparent("fighter2.png", "fighter3.png")
+    makeTransparent("fighter.png", "fighter5.png")
     # changeSize("fighter3.png", "fighter4.png", 60, 50)
     # changeSize("fighterjet.png", "fighterjet1.png", 70, 60)
-    changeSize("forest.jpg", "forest1.jpg", 640, 480)
+    # changeSize("forest.jpg", "forest1.jpg", 640, 480)
+    # makeTransparent("apple.png", "apple1.png")
+    # changeSize("background.jpg", "background1.jpg", 400, 300)
+    # makeTransparent("pythonprogramming.png", "pythonprogramming1.png")
