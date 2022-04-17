@@ -45,3 +45,4 @@ Game *-- Snake
 ## collision
 [Eat apple](../snake/src/collision.py)
 [rasie Exception when snake hit bounds](../snake/src/outBound.py)
+[add Game Over when snake out of bound or crash itself](../snake/src/snake.py)

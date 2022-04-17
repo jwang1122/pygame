@@ -14,7 +14,7 @@ class Snake:
     def draw(self):
         for i in range(len(self.v)):
             if i==0:
-                Game.screen.blit(self.head, self.v[i])
+                Game.screen.blit(self.head, self.headRect)
             else:
                 Game.screen.blit(self.tail, self.v[i])
 

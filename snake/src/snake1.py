@@ -3,31 +3,28 @@ from appsuper import *
 class Snake:
     SIZE = 40
     def __init__(self):
-        self.bodies = []
-        self.addBody(200, 120)
-        self.addBody(200, 80)
+        self.x = [40, 40]
+        self.y = [40, 0]
         self.head, self.headRect = loadImage("head.png")
         self.tail, self.tailRect = loadImage("block.jpg")
         self.speed = (0, 40)
 
-    def addBody(self, x, y):
-        rect = Rect(x,y, Snake.SIZE, Snake.SIZE)
-        self.bodies.append(rect)
-
     def walk(self):
-        for i in range(len(self.bodies)-1, 0, -1):
-            self.bodies[i] = self.bodies[i-1]
-        rect = Rect(self.bodies[0].left, self.bodies[0].top, Snake.SIZE, Snake.SIZE)
-        rect.move_ip(self.speed)
-        self.bodies[0] = rect
+        for i in range(len(self.x)-1, 0, -1):
+            self.x[i] = self.x[i-1]
+            self.y[i] = self.y[i-1]
+        
+        self.x[0] += self.speed[0]
+        self.y[0] += self.speed[1]
+
+        self.draw()
 
     def draw(self):
-        self.walk()
-        for i in range(len(self.bodies)):
+        for i in range(len(self.x)):
             if i==0:
-                Game.screen.blit(self.head, self.bodies[0])
+                Game.screen.blit(self.head, (self.x[i], self.y[i]))
             else:
-                pygame.draw.circle(Game.screen, (0,255,100), (self.bodies[i].left+20, self.bodies[i].top+20), 20, 0)
+                pygame.draw.circle(Game.screen, (0,255,100), (self.x[i]+20, self.y[i]+20), 20, 0)
 
 class Apple:
     def __init__(self):
@@ -60,19 +57,20 @@ class Game(AppSuper):
     def paint(self): # leave this function for subclass to implement
         self.screen.blit(self.bg, (0,0))
         if not self.gameover:
+            self.snake.walk()
             self.apple.draw()
-            self.snake.draw()
-            if self.snake.bodies[0].colliderect(self.apple.rect):
+            if self.collision(self.snake.x[0], self.snake.y[0], self.apple.rect.left, self.apple.rect.top):
                 self.eating.play()
                 self.apple.next()
-                self.snake.addBody(-1,-1)
+                self.snake.x.append(-1)
+                self.snake.y.append(-1)
 
-            for i in range(3, len(self.snake.bodies)-1):
-                if self.snake.bodies[0].colliderect(self.snake.bodies[i]):
+            for i in range(3, len(self.snake.x)):
+                if self.collision(self.snake.x[0], self.snake.y[0], self.snake.x[i], self.snake.y[i]):
                     self.crash.play()
                     self.gameover = True
                     
-            if not (0<=self.snake.bodies[0].left<=Game.width and 0 <= self.snake.bodies[0].top <= Game.height):
+            if not (0<=self.snake.x[0]<=Game.width and 0 <= self.snake.y[0] <= Game.height):
                 self.crash.play()
                 self.snake.speed = (0,0)
                 self.gameover = True
@@ -85,7 +83,12 @@ class Game(AppSuper):
         pygame.display.update()
 
     def displayScore(self):
-        drawText(f"Score: {len(self.snake.bodies)}", (700, 10), (255,255,255))
+        drawText(f"Score: {len(self.snake.x)}", (700, 10), (255,255,255))
+
+    def collision(self, x1, y1, x2, y2):
+        rect1 = Rect(x1, y1, 40, 40)
+        rect2 = Rect(x2, y2, 40, 40)
+        return rect1.colliderect(rect2)
 
 if __name__ == '__main__':
     Game().mainloop()
