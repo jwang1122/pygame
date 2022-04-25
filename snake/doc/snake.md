@@ -1,12 +1,19 @@
 <h1>Snake Eat Apple Game</h1>
 
+- [Start the Game](#start-the-game)
 - [Getting start](#getting-start)
 - [Objects in this game](#objects-in-this-game)
 - [Display Apple and Snake](#display-apple-and-snake)
 - [Move Snake](#move-snake)
 - [Eat Apple](#eat-apple)
 - [Make apple on grid](#make-apple-on-grid)
+- [Add music](#add-music)
+- [Add score](#add-score)
+- [Add background image](#add-background-image)
 
+## Start the Game
+* [Final version of this game](../src/snakeEatApple.py)
+  
 ## Getting start
 > use our existing game.py to initial lize this game
 * [start up python file](../src/snakeEatApple1.py)
@@ -18,7 +25,7 @@ classDiagram
 
 class Snake{
     head:Image
-    bodies:[]
+    bodies:[Rect]
     speed:Rect
     move()
     draw()
@@ -39,7 +46,7 @@ class Game{
 
 Game *-- Snake:contains
 Game *-- Apple:contains
-Apple <-- Snake:use
+Apple -- Snake:use
 ```
 
 ## Display Apple and Snake
@@ -67,3 +74,12 @@ def randomPoint(size=40):
     y = randint(0, cols)*size
     return (x, y)
 ```
+
+## Add music
+* [background music, eat apple ding, crash](../src/snakeEatApple8.py)
+
+## Add score
+* [Draw text](../src/snakeEatApple9.py)
+
+## Add background image
+* []()

@@ -16,6 +16,8 @@ class Snake:
         self.apple = apple
         self.head, self.rectHead = loadImage("head.png")
         self.body, self.rectBody = loadImage("body.jpg")
+        self.ding = loadSound("ding.mp3")
+        self.crash = loadSound("crash.mp3")
         self.speed = (0, 40)
         self.rectHead.move_ip(0, 80)
         self.rectBody.move_ip(0, 40)
@@ -39,11 +41,13 @@ class Snake:
 
         # figure out if the head hit the apple
         if head.colliderect(self.apple.rect):
+            self.ding.play()
             self.bodies.append(Rect(-40,-40,40,40)) # initial position is not important
             self.apple.next()
 
         if head.bottom > Game.height or head.top <0 or head.left <0 or head.right > Game.width:
             print("Game Over!!!")
+            self.crash.play()
             Game.gameover = True
 
 class Game(AppSuper):
@@ -52,6 +56,8 @@ class Game(AppSuper):
         super().__init__(title, bg, fps)
         self.apple = Apple()
         self.snake = Snake(self.apple)
+        music = loadSound("bg_music.mp3")
+        music.play(-1)
 
 
     def handleEvent(self, event): # leave this function for subclass to implement

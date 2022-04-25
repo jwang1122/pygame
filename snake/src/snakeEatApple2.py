@@ -3,7 +3,7 @@ from appsuper import *
 class Apple:
     def __init__(self):
         self.image, self.rect = loadImage("apple3.png")
-        self.next()
+        # self.next()
     
     def draw(self):
         Game.screen.blit(self.image, self.rect)

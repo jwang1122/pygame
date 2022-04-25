@@ -7,7 +7,7 @@ from random import randint
 
 def jump(t, v0=1, y0=0, scale=10000, g = -9.807):
     y=(y0 + v0*t + g*t**2/2)*scale
-    return y
+    return int(y)
 
 def drawText(text, pos, forecolor=(0,0,0)):
     font = pygame.font.SysFont('Arial Bold', 25)    
@@ -106,7 +106,7 @@ class AppSuper:
 
 if __name__ == '__main__':
     # AppSuper().mainloop()
-    v0 = 5
+    v0 = 0.49
     t = 100
-    height = jump(1)
+    height = jump(0.05, v0)
     print(height)

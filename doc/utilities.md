@@ -18,8 +18,8 @@
 ## Notations
 📝 **Source Code**
 ❌ **Mistake:**
-👌 **Reasong:**
-✔️ **Solution:**
+> 👌 **Reasong:**
+> ✔️ **Solution:**
 🔑⚡️ **Knowlodge Base:**
 👍😄 **Conclusion**
 
