@@ -1,5 +1,8 @@
 <h1>Snake Eat Apple</h1>
 
+## final game
+
+* [](../snake/src/snake.py)
 ## start up
 
 [open game window](../snake/src/game.py)
@@ -45,4 +48,5 @@ Game *-- Snake
 ## collision
 [Eat apple](../snake/src/collision.py)
 [rasie Exception when snake hit bounds](../snake/src/outBound.py)
-[add Game Over when snake out of bound or crash itself](../snake/src/snake.py)
+[add Game Over when snake out of bound or crash itself](../snake/src/snake1.py)
+[use rect for snake body](../src/../snake/src/snake2.py)

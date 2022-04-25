@@ -8,9 +8,11 @@ def drawText(text, pos, forecolor=(0,0,0)):
     img = font.render(text, True, forecolor)
     AppSuper.screen.blit(img, pos)
 
-def randomPoint():
-    x = randint(1, 19)*40
-    y = randint(1, 11)*40
+def randomPoint(size=40):
+    rows = AppSuper.width/size
+    cols = AppSuper.height/size
+    x = randint(0, rows)*size
+    y = randint(0, cols)*size
     return (x, y)
 
 def randomPoints(n):
@@ -39,7 +41,13 @@ def loadSound(filename):
     return pygame.mixer.Sound(filename)
 
 class AppSuper:
+    LEFT=1
+    RIGHT=2
+    UP=3
+    DOWN=4
     arrowKeys = {K_LEFT:(-40, 0), K_RIGHT:(40, 0), K_UP:(0, -40),K_DOWN:(0, 40)}
+    speeds = {K_LEFT:(-40, 0), K_RIGHT:(40, 0), K_UP:(0, -40),K_DOWN:(0, 40)}
+    directions = {K_LEFT:LEFT, K_RIGHT:RIGHT, K_UP:UP,K_DOWN:DOWN}
 
     running = True
     flags = RESIZABLE

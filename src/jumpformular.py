@@ -13,10 +13,12 @@ plt.plot(t, h)
 plt.xlabel('t(millisconds)')
 plt.ylabel('y(pixle)')
 plt.title("Stright Jump Up height vs. time")
+plt.grid()
 plt.show()
 
 t = np.linspace(0, 50, 5) # 0~100 millisecond
 h1 = y(t/1000, 0, y0=120)
 plt.plot(t, h1)
 plt.title('Stright jump down height vs. time')
+plt.grid()
 plt.show()

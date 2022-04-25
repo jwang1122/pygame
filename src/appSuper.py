@@ -1,3 +1,4 @@
+from ctypes.wintypes import SIZE
 import pygame
 from pygame.locals import *
 import os
@@ -8,14 +9,16 @@ def jump(t, v0=1, y0=0, scale=10000, g = -9.807):
     y=(y0 + v0*t + g*t**2/2)*scale
     return y
 
-def draw_text(text, pos, forecolor=(0,0,0)):
+def drawText(text, pos, forecolor=(0,0,0)):
     font = pygame.font.SysFont('Arial Bold', 25)    
     img = font.render(text, True, forecolor)
     AppSuper.screen.blit(img, pos)
 
-def randomPoint():
-    x = randint(0, AppSuper.width)
-    y = randint(0, AppSuper.height)
+def randomPoint(size=40):
+    rows = AppSuper.width/size-1
+    cols = AppSuper.height/size-1
+    x = randint(0, rows)*size
+    y = randint(0, cols)*size
     return (x, y)
 
 def randomPoints(n):
@@ -58,7 +61,7 @@ class AppSuper:
     UP = 2
     DOWN = 3
     arrowKeys = {K_LEFT:(-15, 0), K_RIGHT:(15, 0), K_UP:(0, -15),K_DOWN:(0, 15)}
-    speeds = {K_LEFT:(-15, 0), K_RIGHT:(15, 0), K_UP:(0, -15),K_DOWN:(0, 15)}
+    speeds = {K_LEFT:(-40, 0), K_RIGHT:(40, 0), K_UP:(0, -40),K_DOWN:(0, 40)}
     directions = {K_LEFT:LEFT, K_RIGHT:RIGHT, K_UP:UP,K_DOWN:DOWN}
 
     running = True
@@ -102,4 +105,8 @@ class AppSuper:
         pygame.quit()
 
 if __name__ == '__main__':
-    AppSuper().mainloop()
+    # AppSuper().mainloop()
+    v0 = 5
+    t = 100
+    height = jump(1)
+    print(height)
