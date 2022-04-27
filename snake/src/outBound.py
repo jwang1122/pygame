@@ -8,7 +8,7 @@ class Snake:
         self.x = [40, 40]
         self.y = [40, 0]
         self.head, self.headRect = loadImage("head.png")
-        self.tail, self.tailRect = loadImage("block.jpg")
+        self.tail, self.tailRect = loadImage("body.jpg")
         self.speed = (0, 40)
 
     def walk(self):
@@ -45,7 +45,7 @@ class Game(AppSuper):
         super().__init__(fps=fps)
         self.apple = Apple()
         self.snake = Snake()
-        self.bgMusic = loadSound("bg_music_1.mp3")
+        self.bgMusic = loadSound("bg_music.mp3")
         self.eating = loadSound("ding.mp3")
         self.crash = loadSound("crash.mp3")
         self.bgMusic.play(-1, 0) # play(loops=0, start=0.0, fade_ms=0); -1 for infinite loop

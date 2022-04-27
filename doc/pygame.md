@@ -56,6 +56,8 @@ preferred installer program
 - [animation](#animation)
 - [Sample games](#sample-games)
 - [Snake Eat Apple](#snake-eat-apple)
+- [Space Invaders](#space-invaders)
+- [Image Font](#image-font)
 - [2D Game Categorization](#2d-game-categorization)
 - [Online Game](#online-game)
 - [References](#references)
@@ -334,12 +336,25 @@ Example of an RGBA image composited over a checkerboard background. alpha is 0% 
 ![](missle.png)
 
 ## Snake Eat Apple
+* [snake](../snake/doc/snake.md)
 * [](../src/snake.py)
 * [Display Snake](../snake/src/snakeApple.py)
 * [Snake move](../snake/src/snakeMove.py)
 * [snake with long tail](../snake/src/snakeMoveVector.py)
 * [snake eat apple](../snake/src/collision.py)
   
+## Space Invaders
+* [space invader](../SpaceInvaders/doc/spaceInvaders.md)
+
+## Image Font
+[ImageFont document](https://pillow.readthedocs.io/en/stable/reference/ImageFont.html)
+[Change Image](../src/changeImage.py)
+
+```py
+def createTransparentText(fileOut, text, /, width=150, height=30, *, color=(255, 255, 255, 0), mode='RGBA')
+def createBullet(fileOut, /, width, height, *, color=(255, 255, 255, 0), mode='RGBA')
+```
+
 ## 2D Game Categorization
 
 ```mermaid

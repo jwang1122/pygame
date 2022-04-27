@@ -28,10 +28,28 @@ class Snake:
     
     def draw(self):
         self.move()
-        Game.screen.blit(self.head, self.bodies[0])
+        head = self.bodies[0]
+        Game.screen.blit(self.head, head)
         for i in range(1,len(self.bodies)):
             Game.screen.blit(self.body, self.bodies[i])
         drawText(f"Score: {len(self.bodies)}", (550, 10), "#0055FF")
+        self.apple.draw()
+
+        # figure out if the head hit the apple
+        if head.colliderect(self.apple.rect):
+            self.ding.play()
+            self.bodies.append(Rect(-40,-40,40,40)) # initial position is not important
+            self.apple.next()
+
+        for i in range(2, len(self.bodies)-1): 
+            if head.colliderect(self.bodies[i]): # hit its body
+                self.crash.play()
+                Game.gameover = True
+
+        if head.bottom > Game.height or head.top <0 or head.left <0 or head.right > Game.width:
+            print("Game Over!!!")
+            self.crash.play()
+            Game.gameover = True
 
     def move(self):
         for i in range(len(self.bodies)-1, 0, -1): # simulate snake moving
@@ -40,16 +58,6 @@ class Snake:
         head.move_ip(self.speed)
         self.bodies[0] = head
 
-        # figure out if the head hit the apple
-        if head.colliderect(self.apple.rect):
-            self.ding.play()
-            self.bodies.append(Rect(-40,-40,40,40)) # initial position is not important
-            self.apple.next()
-
-        if head.bottom > Game.height or head.top <0 or head.left <0 or head.right > Game.width:
-            print("Game Over!!!")
-            self.crash.play()
-            Game.gameover = True
 
 class Game(AppSuper):
     gameover = False
@@ -59,6 +67,9 @@ class Game(AppSuper):
         self.snake = Snake(self.apple)
         music = loadSound("bg_music.mp3")
         music.play(-1)
+        self.bg, self.bgrect = loadImage("grassfield.jpg")
+        self.gameover, self.rect = loadImage('gameover1.jpg')
+        self.rect.topleft = (200, 100)
 
 
     def handleEvent(self, event): # leave this function for subclass to implement
@@ -66,10 +77,12 @@ class Game(AppSuper):
             self.snake.speed = self.speeds[event.key]
 
     def paint(self): # leave this function for subclass to implement
-        self.screen.fill(self.bg)
+        # self.screen.fill(self.bg)
+        self.screen.blit(self.bg, self.bgrect)
         if not Game.gameover:
             self.snake.draw()
-            self.apple.draw()
+        else:
+            self.screen.blit(self.gameover, self.rect)
         pygame.display.update()
 
 if __name__ == '__main__':

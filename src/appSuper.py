@@ -68,7 +68,8 @@ class AppSuper:
     flags = RESIZABLE
     width=640
     height=480
-    screen = pygame.display.set_mode((width,height), flags)
+    pygame.init()
+    pygame.mixer.init()
     RED = (255, 0, 0)
     GRAY = (150, 150, 150)
     BLUE = (0,0,255)
@@ -76,14 +77,14 @@ class AppSuper:
     GREEN = (0, 255, 0)
     BLACK = (0,0,0)
     CYAN = (0, 255,255)
+    screen = pygame.display.set_mode((width, height), display=1)
 
     def __init__(self, title="PyGame", bg=CYAN, fps=30):
-        pygame.init()
-        pygame.mixer.init()
         pygame.display.set_caption(title)
         self.bg = bg
         self.fps = fps
         self.clock = pygame.time.Clock()
+        print(AppSuper.screen.get_size())
 
     def handleEvent(self, event): # leave this function for subclass to implement
         pass
@@ -105,8 +106,8 @@ class AppSuper:
         pygame.quit()
 
 if __name__ == '__main__':
-    # AppSuper().mainloop()
-    v0 = 0.49
-    t = 100
-    height = jump(0.05, v0)
-    print(height)
+    AppSuper().mainloop()
+    # v0 = 0.49
+    # t = 100
+    # height = jump(0.05, v0)
+    # print(height)

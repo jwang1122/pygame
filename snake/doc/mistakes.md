@@ -5,5 +5,10 @@
 > ✔️ **Solution:** choose python.exe as interpreter, fix file not found issue. 
 
 ❌ **Mistake:** the random Apple possition is out of the window!
-> 👌 **Reasong:**
-> ✔️ **Solution:**
+> 👌 **Reasong:** local appsuper.py define the width=800, height=600
+> ✔️ **Solution:** change back to 640, 480
+
+```py
+# figure it out by
+print(Game.screen.get_size())
+```

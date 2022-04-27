@@ -3,6 +3,7 @@ from appsuper import *
 class Game(AppSuper):
     def __init__(self, title="PyGame", bg=(255,255,0), fps=30):
         super().__init__(title, bg, fps)
+        print(Game.screen.get_size())
 
     def handleEvent(self, event): # leave this function for subclass to implement
         pass

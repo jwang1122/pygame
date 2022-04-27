@@ -9,8 +9,8 @@ def drawText(text, pos, forecolor=(0,0,0)):
     AppSuper.screen.blit(img, pos)
 
 def randomPoint(size=40):
-    rows = AppSuper.width/size
-    cols = AppSuper.height/size
+    rows = AppSuper.width/size-1
+    cols = AppSuper.height/size-1
     x = randint(0, rows)*size
     y = randint(0, cols)*size
     return (x, y)
@@ -51,9 +51,9 @@ class AppSuper:
 
     running = True
     flags = RESIZABLE
-    width=800
-    height=600
-    screen = pygame.display.set_mode((width,height), flags)
+    width=640
+    height=480
+    screen = pygame.display.set_mode((width,height))
     RED = (255, 0, 0)
     GRAY = (150, 150, 150)
     BLUE = (0,0,255)

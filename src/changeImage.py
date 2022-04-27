@@ -1,4 +1,41 @@
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont, ImageTk
+from itertools import count, cycle
+import tkinter as tk
+
+def dissetGif(imgFilename, outFile):
+    img = Image.open(imgFilename) # load all image frames from single GIF file
+    frames = []
+
+    try:
+        for i in count(1):
+            frames.append(ImageTk.PhotoImage(img.copy())) # add single from to frames list.
+            img.seek(i) # looking for next image frame
+    except EOFError as error:
+        print(error)
+    # i = 1
+    # for image in frames:
+    #     image.save(outFile+str(i)+".png")
+    #     i += 1
+    print("Successful")
+
+def createTransparentText(fileOut, text, /, width=150, height=30, *, color=(255, 255, 255, 0), mode='RGBA'):
+    img = Image.new(mode=mode, size=(width, height), color=color)
+    painter = ImageDraw.Draw(img)
+    font = ImageFont.truetype('arial.ttf', 25) 
+    painter.text((0,0), text, fill=(255,0,0), font=font)
+    img.save(fileOut)
+    print("Successful")
+
+def createBullet(fileOut, /, width, height, *, color=(255, 255, 255, 0), mode='RGBA'):
+    img = Image.new(mode=mode, size=(width, height), color=color)
+    painter = ImageDraw.Draw(img)
+    xy = [(0,0), (5,0), (5,10),(0,10)]
+    painter.polygon(xy, (255,0,0))
+    xy = [(5,0), (15,0), (20,5),(15,10),(5,10)]
+    painter.polygon(xy, (242,185,50))
+
+    img.save(fileOut)
+    print("Successful")
 
 def changeSize(fileIn, fileOut, width1, height1, scale=None):
     img = Image.open(fileIn)
@@ -11,7 +48,7 @@ def changeSize(fileIn, fileOut, width1, height1, scale=None):
         img = img.resize((width1, height1))
 
     img.save(fileOut)
-    print("Successfule")
+    print("Successful")
 
 def makeTransparent(fileIn, fileOut):
     r,g,b=245,245,245
@@ -31,13 +68,13 @@ def makeTransparent(fileIn, fileOut):
             newData.append(item)
     img.putdata(newData)
     img.save(fileOut, "PNG")
-    print("Successfule")
+    print("Successful")
 
 def rotate(fileIn, fileOut, angle):
     img = Image.open(fileIn)
     img = img.rotate(angle)
     img.save(fileOut)
-    print("Successfule")
+    print("Successful")
 
 if __name__ == '__main__':
     # changeSize("head.png", "head1.png", 40, 40)
@@ -55,4 +92,8 @@ if __name__ == '__main__':
     # makeTransparent("apple1.jpg", "apple2.jpg")
     # changeSize("apple2.png", "apple3.png", 40, 40)
     # changeSize("gameover.jpg", "gameover1.jpg", 250, 200)
-    changeSize("gameover0.png", "gameover1.png", 300, 230)
+    # changeSize("imageProcess/grassfield.jpg", "imageProcess/grassfield1.jpg", 640, 480)
+    # createBullet("bullet.png", 20, 20)
+    # rotate("bullet.png", "bullet2.png", 90)
+    # createTransparentText("gameover.png", "Game Over!!!")
+    dissetGif("workForLive.gif", "workForLive")
