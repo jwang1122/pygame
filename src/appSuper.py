@@ -77,7 +77,7 @@ class AppSuper:
     GREEN = (0, 255, 0)
     BLACK = (0,0,0)
     CYAN = (0, 255,255)
-    screen = pygame.display.set_mode((width, height), display=1)
+    screen = pygame.display.set_mode((width, height), display=0)
 
     def __init__(self, title="PyGame", bg=CYAN, fps=30):
         pygame.display.set_caption(title)

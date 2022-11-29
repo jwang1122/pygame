@@ -94,8 +94,8 @@ class HitChimp(AppSuper):
             self.fist.unpunch()
 
     def drawLabel(self):
-        draw_text("Missing: ", (10, 10), (255,255,255))
-        draw_text("Hits: ", (400, 10), (255,255,255))
+        drawText("Missing: ", (10, 10), (255,255,255))
+        drawText("Hits: ", (400, 10), (255,255,255))
 
     def paint(self): # leave this function for subclass to implement
         self.screen.blit(self.bg, (0,0))

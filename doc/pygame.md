@@ -16,8 +16,17 @@ Click to see website: [PyGame Document](https://www.pygame.org/docs/)
 
 [Physics Simulations](https://www.youtube.com/watch?v=tLsi2DeUsak)
 
+
 📌 pip: Package Installer for Python
 preferred installer program
+
+```
+python -m venv env
+python.exe -m pip install --upgrade pip
+pip install pygame
+```
+
+😢❌ Warning: Python 11.0 does not support pygame-2.1.2
 
 ❓ What is pygame?
 
